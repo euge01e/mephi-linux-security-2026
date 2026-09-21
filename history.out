@@ -1,0 +1,32 @@
+    1  sudo groupadd students
+    2  sudo adduser -u 1234 -G students user1
+    3  sudo passwd user1
+    4  sudo chage -M 90 user1
+    5  sudo cat /etc/passwd | grep user1
+    6  sudo cat /etc/shadow | grep user1
+    7  sudo cat /etc/group | grep user1
+    8  sudo find / -perm -u+s -ls 2>/dev/null
+    9  ps -eo pid,ruid,euid,comm --sort=pid | awk '$2 >= 1000 && $3 == 0'
+   10  cp /usr/bin/cat .
+   11  sudo chown root:root ./cat
+   12  sudo chmod 4755 ./cat
+   13  ls .
+   14  ls -l ./cat
+   15  cat /etc/passwd
+   16  cat /etc/shadow
+   17  ./cat /etc/shadow
+   18  cp /usr/bin/chown .
+   19  sudo setcap 'cap_chown=ep' ./chown
+   20  getcap ./chown
+   21  touch /tmp/test4
+   22  ls -l /tmp/test4
+   23  chown user2 /tmp/test4
+   24  ./chown user2 /tmp/test4
+   25  ls -l /tmp/test4
+   26  sudo visudo
+   27  sudo visudo -c
+   28  sudo -l -U user1
+   29  date
+   30  echo 374609
+   31  histiry > ./history.out
+   32  history > ./history.out
